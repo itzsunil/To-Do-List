@@ -1,1 +1,1 @@
-# To-Do-List
+The To-Do List Application is a task management tool designed to help users organize their daily activities, tasks, and responsibilities efficiently. It allows users to create a list of tasks, set priorities, deadlines, and mark tasks as completed. This project is ideal for improving productivity and ensuring that no task is forgotten or overlooked.
