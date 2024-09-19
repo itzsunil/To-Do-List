@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body  background="C:\Users\sunil\OneDrive\Desktop\HTML\To-do list\list.jpg">
+    <div class="container">
+        <h1>My To-Do List</h1>
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Enter a new task...">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <ul id="taskList">
+            <!-- List items will appear here -->
+        </ul>
+    </div>
+
+    <script>
+        function addTask() {
+            let taskInput = document.getElementById('taskInput').value;
+            if (taskInput === "") {
+                alert("Please enter a task.");
+                return;
+            }
+
+            let ul = document.getElementById('taskList');
+            let li = document.createElement('li');
+            li.className = 'task-item';
+
+            let checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.className = 'checkbox';
+
+            let label = document.createElement('label');
+            label.textContent = taskInput;
+
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    label.style.textDecoration = 'line-through';
+                } else {
+                    label.style.textDecoration = 'none';
+                }
+            });
+
+            li.appendChild(checkbox);
+            li.appendChild(label);
+            ul.appendChild(li);
+
+            // Clear input after adding task
+            document.getElementById('taskInput').value = '';
+        }
+    </script>
+</body>
+</html>
